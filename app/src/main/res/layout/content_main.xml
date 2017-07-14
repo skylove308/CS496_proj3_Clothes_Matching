@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.clothes_matching.MainActivity"
+    tools:showIn="@layout/app_bar_main">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="36sp"
+        android:textColor="#000000"
+        android:id = "@+id/Title_Name"
+        android:text="NARAE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.059"
+        app:layout_constraintVertical_bias="0.034" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:id="@+id/subtitle_name"
+        android:text="너를 위한 단 하나의 쇼핑몰 나래"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/Title_Name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintBottom_toBottomOf="@+id/bar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintVertical_bias="0.82" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#BDBDBD"
+        android:layout_marginTop="7dp"
+        android:id="@+id/bar"
+        app:layout_constraintTop_toBottomOf="@id/Title_Name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="BEST SELLER"
+        android:textColor="#5935ac"
+        android:layout_marginTop="8dp"
+        android:id="@+id/best_seller"
+        app:layout_constraintTop_toBottomOf="@+id/bar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:layout_width="114dp"
+        android:layout_height="156dp"
+        android:id="@+id/image1"
+        android:src="@drawable/shirt_1"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/best_seller"
+        app:layout_constraintRight_toLeftOf="@+id/image2"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:layout_width="114dp"
+        android:layout_height="156dp"
+        android:id="@+id/image2"
+        android:src="@drawable/shirt_2"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/best_seller"
+        app:layout_constraintRight_toLeftOf="@+id/image3"
+        app:layout_constraintLeft_toRightOf="@+id/image1" />
+
+    <ImageView
+        android:layout_width="114dp"
+        android:layout_height="156dp"
+        android:id="@+id/image3"
+        android:src="@drawable/shirt_3"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/best_seller"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image2" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/shirt_1"
+        android:layout_marginTop="6dp"
+        android:text="럽유 홀터넥\n 니트 슬리브리스"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/image1"
+        app:layout_constraintRight_toLeftOf="@+id/shirt_2"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/shirt_2"
+        android:layout_marginTop="6dp"
+        android:text="세레나데 배색\n 니트 슬리브리스"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/image2"
+        app:layout_constraintRight_toLeftOf="@+id/shirt_3"
+        app:layout_constraintLeft_toRightOf="@+id/shirt_1" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/shirt_3"
+        android:layout_marginTop="6dp"
+        android:text="시크해 루즈핏\n 프린팅 티셔츠"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/image3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/shirt_2" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:background="#BDBDBD"
+        android:layout_marginTop="12dp"
+        android:id="@+id/bar2"
+        app:layout_constraintTop_toBottomOf="@id/shirt_3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="NEW ARRIVAL"
+        android:textColor="#ffb950"
+        android:layout_marginTop="8dp"
+        android:id="@+id/new_arrival"
+        app:layout_constraintTop_toBottomOf="@+id/bar2"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:layout_width="114dp"
+        android:layout_height="156dp"
+        android:id="@+id/image4"
+        android:src="@drawable/shirt_4"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/new_arrival"
+        app:layout_constraintRight_toLeftOf="@+id/image5"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:layout_width="114dp"
+        android:layout_height="156dp"
+        android:id="@+id/image5"
+        android:src="@drawable/shirt_5"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/new_arrival"
+        app:layout_constraintRight_toLeftOf="@+id/image6"
+        app:layout_constraintLeft_toRightOf="@+id/image4" />
+
+    <ImageView
+        android:layout_width="114dp"
+        android:layout_height="156dp"
+        android:id="@+id/image6"
+        android:src="@drawable/shirt_6"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/new_arrival"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/image5" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/shirt_4"
+        android:layout_marginTop="6dp"
+        android:text="귀여워 데님\n 서스펜더 원피스"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/image4"
+        app:layout_constraintRight_toLeftOf="@+id/shirt_5"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/shirt_5"
+        android:layout_marginTop="6dp"
+        android:text="스윗치즈 린넨\n 롱 원피스"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/image5"
+        app:layout_constraintRight_toLeftOf="@+id/shirt_6"
+        app:layout_constraintLeft_toRightOf="@+id/shirt_4" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/shirt_6"
+        android:layout_marginTop="6dp"
+        android:text="해변으로 민소매\n 미니 원피스"
+        android:textSize="12sp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/image6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/shirt_5" />
+</android.support.constraint.ConstraintLayout>
