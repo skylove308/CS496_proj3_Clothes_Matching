@@ -7,4 +7,7 @@
     <string name="fb_login_protocol_scheme">fb114496869187176</string>
 
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -10,6 +10,10 @@
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
                 android:title="장바구니" />
+            <item
+                android:id="@+id/nav_choose"
+                android:title="당신의 옷을 추천해드립니다"/>
     </item>
+
 
 </menu>
