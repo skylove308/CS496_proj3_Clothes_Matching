@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="당신의 성별을 선택하세요"
+        android:text="옷의 종류를 선택해 주세요"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -21,8 +21,8 @@
         tools:layout_constraintLeft_creator="1" />
 
     <Button
-        android:id="@+id/malebtn"
-        android:text="남"
+        android:id="@+id/upperbtn"
+        android:text="상의"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,8 +33,8 @@
         app:layout_constraintVertical_bias="0.675" />
 
     <Button
-        android:id="@+id/femalebtn"
-        android:text="여"
+        android:id="@+id/lowerbtn"
+        android:text="하의"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,6 +42,18 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.850"
+        app:layout_constraintVertical_bias="0.675" />
+
+    <Button
+        android:id="@+id/onepiecebtn"
+        android:text="정장/원피스"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintVertical_bias="0.675" />
 
 
