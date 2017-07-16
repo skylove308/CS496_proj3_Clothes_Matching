@@ -4,15 +4,16 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 
 public class ToneTypeFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    // TODO: Rename and change types of parameters
 
     public ToneTypeFragment() {
         // Required empty public constructor
@@ -23,6 +24,50 @@ public class ToneTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tone_type, container, false);
+        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup2);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.top :
+                        MainActivity.tag += "1";
+                        break;
+                    case R.id.bottom :
+                        MainActivity.tag += "2";
+                        break;
+                    case R.id.dress :
+                        MainActivity.tag += "3";
+                        break;
+                }
+
+            }
+        });
+
+        ImageView go_3 = (ImageView) view.findViewById(R.id.go_3);
+        go_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToneTypeFragment fragment = new ToneTypeFragment();
+
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.replace(R.id.MainView, fragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        ImageView back_3 = (ImageView) view.findViewById(R.id.back_3);
+        back_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                GenderTypeFragment fragment = new GenderTypeFragment();
+
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.replace(R.id.MainView, fragment);
+                fragmentTransaction.commit();
+            }
+        });
 
         return view;
     }
