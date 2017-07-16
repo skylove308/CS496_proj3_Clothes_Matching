@@ -28,23 +28,27 @@ public class GenderTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gender_type, container, false);
-        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.fragment1 :
-                        break;
-                    case R.id.fragment2 :
-                        break;
-                }
+        final RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup);
 
-            }
-        });
         ImageView go_2 = (ImageView) view.findViewById(R.id.go_2);
         go_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+                        switch (checkedId){
+                            case R.id.male :
+                                MainActivity.tag += "1";
+                                break;
+                            case R.id.female :
+                                MainActivity.tag += "2";
+                                break;
+                        }
+
+                    }
+                });
+
                 TypeTypeFragment fragment = new TypeTypeFragment();
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
@@ -58,6 +62,7 @@ public class GenderTypeFragment extends Fragment {
         back_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.tag = "";
                 SelectMainFragment fragment = new SelectMainFragment();
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
