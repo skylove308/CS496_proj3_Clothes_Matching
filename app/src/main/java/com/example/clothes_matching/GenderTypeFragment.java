@@ -29,7 +29,7 @@ public class GenderTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gender_type, container, false);
-        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup);
+        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup2);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

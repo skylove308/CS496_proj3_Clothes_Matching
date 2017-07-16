@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.tag ="";
                 MainFragment fragment = new MainFragment();
 
                 FragmentManager fm = getSupportFragmentManager();

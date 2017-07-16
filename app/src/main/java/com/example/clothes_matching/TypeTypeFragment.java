@@ -26,7 +26,7 @@ public class TypeTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_type_type, container, false);
-        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup2);
+        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup3);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -49,18 +49,7 @@ public class TypeTypeFragment extends Fragment {
         go_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(types == 1)
-                {
-                    MainActivity.tag += "1";
-                }
-                else if(types == 2)
-                {
-                    MainActivity.tag += "2";
-                }
-                else if(types == 3)
-                {
-                    MainActivity.tag += "3";
-                }
+                MainActivity.tag += String.valueOf(types);
 
                 ToneTypeFragment fragment = new ToneTypeFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();

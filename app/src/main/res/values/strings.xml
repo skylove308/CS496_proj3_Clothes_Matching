@@ -7,7 +7,65 @@
     <string name="fb_login_protocol_scheme">fb114496869187176</string>
 
     <string name="action_settings">Settings</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="select_main_1">
+        <![CDATA[
+        인터넷 쇼핑몰 이용이 <b>처음</b>이신가요?
+        ]]>
+    </string>
+
+    <string name="select_main_2">
+        <![CDATA[
+        옷을 <b>입어보지 않고</b> 구매하기 망설여지시나요?
+        ]]>
+    </string>
+
+    <string name="select_main_6">
+        <![CDATA[
+        고객님에게 맞는 <b>최적의 옷</b>을 찾아드리는
+        ]]>
+    </string>
+
+    <string name="select_main_8">
+        <![CDATA[
+        <b>지금 바로 시작하세요!
+        ]]>
+    </string>
+
+    <string name="personal_color_1">
+        <![CDATA[
+        맨손을 아래 8장의 사진에 각각 올려보고<br/><br/>
+        어느 색상 위에 손이 위치했을 때 <b>손의 색깔이 더 화사했는지</b><br/><br/>
+        어느 색상위에서는 <b>더 칙칙하거나 어두워 보였는지</b> 테스트해봅시다
+        ]]>
+    </string>
+
+    <string name="personal_color_2">
+        <![CDATA[
+        위 8장의 컬러 사진 중<br/><br/>
+        어느 컬러가 본인의 손등 컬러와 잘어울린다고 생각하셨나요?<br/><br/>
+        위 컬러 중 본인의 피부 톤과 잘 어울리는 컬러가<br/><br/>
+        <b>왼쪽에 더 많이 속해있다면 "'웜톤'"</b><br/><br/>
+        <b>오른쪽에 더 많이 속해있다면 "'쿨톤'"</b>이라고 진단할 수 있답니다
+        ]]>
+    </string>
+
+    <string name="personal_color_3">
+        <![CDATA[
+        "<b>웜톤인 고객님들</b>은 위와 마찬가지로<br/><br/>
+        손을 봄과 가을 컬러 위에 놓고<br/><br/>
+        어느 색상에서 피부 톤이 더 깨끗하고<br/><br/>
+        생기 있어 보이는지 테스트해보세요!"
+        ]]>
+    </string>
+
+    <string name="personal_color_4">
+        <![CDATA[
+        "<b>쿨톤인 고객님들</b>은 위와 마찬가지로<br/><br/>
+        손을 여름과 겨울 컬러 위에 놓고<br/><br/>
+        어느 색상에서 피부 톤이 더 깨끗하고<br/><br/>
+        생기 있어 보이는지 테스트해보세요!"
+        ]]>
+    </string>
 </resources>

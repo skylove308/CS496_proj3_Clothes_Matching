@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.clothes_matching.MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/pc1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/cool_warm"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="40dp" />
+
+        <ImageView
+            android:id="@+id/cool_warm"
+            android:layout_width="wrap_content"
+            android:layout_height="1000dp"
+            android:src="@drawable/cool_warm"
+            app:layout_constraintTop_toBottomOf="@+id/pc1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/pc2" />
+
+        <TextView
+            android:id="@+id/pc2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/cool_warm"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/pc3"
+            android:layout_marginBottom="70dp"/>
+
+        <TextView
+            android:id="@+id/pc3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="웜톤 봄 VS 가을 타입 진단하기!"
+            android:textStyle="bold"
+            android:textColor="#ff3535"
+            app:layout_constraintTop_toBottomOf="@+id/pc2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/warm" />
+
+        <ImageView
+            android:id="@+id/warm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/warm"
+            app:layout_constraintTop_toBottomOf="@+id/pc3"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/pc4" />
+
+        <TextView
+            android:id="@+id/pc4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="웜톤인 고객님들은 위와 마찬가지로\n\n
+손을 봄과 가을 컬러 위에 놓고\n\n
+어느 색상에서 피부 톤이 더 깨끗하고\n\n
+생기 있어 보이는지 테스트해보세요!"
+            app:layout_constraintTop_toBottomOf="@+id/warm"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/pc5"
+            android:layout_marginBottom="70dp"/>
+
+        <TextView
+            android:id="@+id/pc5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="웜톤 여름 VS 겨울 타입 진단하기!"
+            android:textStyle="bold"
+            android:textColor="#3564ff"
+            app:layout_constraintTop_toBottomOf="@+id/pc4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/cool" />
+
+        <ImageView
+            android:id="@+id/cool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cool"
+            app:layout_constraintTop_toBottomOf="@+id/pc5"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/pc6" />
+
+        <TextView
+            android:id="@+id/pc6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="쿨톤인 고객님들은 위와 마찬가지로\n\n
+손을 여름과 겨울 컬러 위에 놓고\n\n
+어느 색상에서 피부 톤이 더 깨끗하고\n\n
+생기 있어 보이는지 테스트해보세요!"
+            app:layout_constraintTop_toBottomOf="@+id/cool"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/back_personal"
+            android:layout_marginBottom="30dp"/>
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/back_into_icon"
+            android:id="@+id/back_personal"
+            app:layout_constraintTop_toBottomOf="@+id/pc6"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
+    </ScrollView>

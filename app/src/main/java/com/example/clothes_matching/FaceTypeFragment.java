@@ -58,6 +58,7 @@ public class FaceTypeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity.tag += String.valueOf(faces);
+
                 BodyTypeFragment fragment = new BodyTypeFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();

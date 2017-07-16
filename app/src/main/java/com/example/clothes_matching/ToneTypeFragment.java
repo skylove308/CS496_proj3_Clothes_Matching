@@ -6,14 +6,19 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
+import android.widget.TextView;
+
 
 
 public class ToneTypeFragment extends Fragment {
+    int tones = 1;
 
     public ToneTypeFragment() {
         // Required empty public constructor
@@ -24,30 +29,13 @@ public class ToneTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_tone_type, container, false);
-        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup2);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.top :
-                        MainActivity.tag += "1";
-                        break;
-                    case R.id.bottom :
-                        MainActivity.tag += "2";
-                        break;
-                    case R.id.dress :
-                        MainActivity.tag += "3";
-                        break;
-                }
 
-            }
-        });
-
-        ImageView go_3 = (ImageView) view.findViewById(R.id.go_3);
-        go_3.setOnClickListener(new View.OnClickListener() {
+        TextView textView = (TextView)view.findViewById(R.id.personal_color);
+        textView.setText("※클릭: 본인의 퍼스널 컬러를 모르신다면?");
+        textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToneTypeFragment fragment = new ToneTypeFragment();
+                PersonalColorFragment fragment = new PersonalColorFragment();
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
@@ -56,11 +44,48 @@ public class ToneTypeFragment extends Fragment {
             }
         });
 
-        ImageView back_3 = (ImageView) view.findViewById(R.id.back_3);
-        back_3.setOnClickListener(new View.OnClickListener() {
+        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup4);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.spring :
+                        tones = 1;
+                        break;
+                    case R.id.summer :
+                        tones = 2;
+                        break;
+                    case R.id.fall :
+                        tones = 3;
+                        break;
+                    case R.id.winter :
+                        tones = 4;
+                        break;
+                }
+
+            }
+        });
+
+        ImageView go_4 = (ImageView) view.findViewById(R.id.go_4);
+        go_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                GenderTypeFragment fragment = new GenderTypeFragment();
+                MainActivity.tag += String.valueOf(tones);
+
+                FaceTypeFragment fragment = new FaceTypeFragment();
+                FragmentManager fm = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.replace(R.id.MainView, fragment);
+                fragmentTransaction.commit();
+            }
+        });
+
+        ImageView back_4 = (ImageView) view.findViewById(R.id.back_4);
+        back_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.tag = MainActivity.tag.substring(0,MainActivity.tag.length()-1);
+                TypeTypeFragment fragment = new TypeTypeFragment();
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
