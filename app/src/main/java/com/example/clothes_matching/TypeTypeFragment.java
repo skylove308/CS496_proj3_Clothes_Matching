@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
  */
 
 public class TypeTypeFragment extends Fragment {
+    int types = 1;
     public TypeTypeFragment() {
         // Required empty public constructor
     }
@@ -31,13 +32,13 @@ public class TypeTypeFragment extends Fragment {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId){
                     case R.id.top :
-                        MainActivity.tag += "1";
+                        types = 1;
                         break;
                     case R.id.bottom :
-                        MainActivity.tag += "2";
+                        types = 2;
                         break;
                     case R.id.dress :
-                        MainActivity.tag += "3";
+                        types = 3;
                         break;
                 }
 
@@ -48,12 +49,25 @@ public class TypeTypeFragment extends Fragment {
         go_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToneTypeFragment fragment = new ToneTypeFragment();
+                if(types == 1)
+                {
+                    MainActivity.tag += "1";
+                }
+                else if(types == 2)
+                {
+                    MainActivity.tag += "2";
+                }
+                else if(types == 3)
+                {
+                    MainActivity.tag += "3";
+                }
 
+                ToneTypeFragment fragment = new ToneTypeFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.replace(R.id.MainView, fragment);
                 fragmentTransaction.commit();
+                System.out.println(MainActivity.tag);
             }
         });
 
@@ -61,12 +75,14 @@ public class TypeTypeFragment extends Fragment {
         back_3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.tag = MainActivity.tag.substring(0,MainActivity.tag.length()-1);
                 GenderTypeFragment fragment = new GenderTypeFragment();
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.replace(R.id.MainView, fragment);
                 fragmentTransaction.commit();
+                System.out.println(MainActivity.tag);
             }
         });
 

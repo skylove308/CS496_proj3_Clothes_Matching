@@ -50,10 +50,12 @@ public class GenderTypeFragment extends Fragment {
                 if(genders)
                 {
                     MainActivity.tag += "1";
+                    System.out.println(MainActivity.tag);
                 }
                 else
                 {
                     MainActivity.tag += "2";
+                    System.out.println(MainActivity.tag);
                 }
                 TypeTypeFragment fragment = new TypeTypeFragment();
 
@@ -61,6 +63,7 @@ public class GenderTypeFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.replace(R.id.MainView, fragment);
                 fragmentTransaction.commit();
+                System.out.println(MainActivity.tag);
             }
         });
 
@@ -75,6 +78,7 @@ public class GenderTypeFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.replace(R.id.MainView, fragment);
                 fragmentTransaction.commit();
+                System.out.println(MainActivity.tag);
             }
         });
 
