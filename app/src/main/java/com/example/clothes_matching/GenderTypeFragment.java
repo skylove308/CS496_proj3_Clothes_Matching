@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import android.widget.RadioGroup;
  * A simple {@link Fragment} subclass.
  */
 public class GenderTypeFragment extends Fragment {
+    boolean genders = true;
 
 
     public GenderTypeFragment() {
@@ -29,27 +29,32 @@ public class GenderTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gender_type, container, false);
-        final RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup);
-
+        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.male :
+                        genders = true;
+                        break;
+                    case R.id.female :
+                        genders = false;
+                        break;
+                }
+            }
+        });
         ImageView go_2 = (ImageView) view.findViewById(R.id.go_2);
-
         go_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("선택", "**************************************");
-                radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        switch (checkedId){
-                            case R.id.male :
-                                Log.d("남자선택", "**************************************");
-                                break;
-                            case R.id.female :
-                                break;
-                        }
-
-                    }
-                });
+                if(genders)
+                {
+                    MainActivity.tag += "1";
+                }
+                else
+                {
+                    MainActivity.tag += "2";
+                }
                 TypeTypeFragment fragment = new TypeTypeFragment();
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
@@ -63,6 +68,7 @@ public class GenderTypeFragment extends Fragment {
         back_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.tag = "";
                 SelectMainFragment fragment = new SelectMainFragment();
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
