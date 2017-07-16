@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="옷의 종류를 선택해 주세요"
+        android:text="원하시는 옷의 종류를 선택하세요"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -20,41 +20,57 @@
         app:layout_constraintVertical_chainStyle="spread_inside"
         tools:layout_constraintLeft_creator="1" />
 
-    <Button
-        android:id="@+id/upperbtn"
-        android:text="상의"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/go_into_icon"
+        android:id="@+id/go_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.150"
-        app:layout_constraintVertical_bias="0.675" />
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintVertical_bias="0.942" />
 
-    <Button
-        android:id="@+id/lowerbtn"
-        android:text="하의"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="300dp"
+        android:layout_height="85dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.850"
-        app:layout_constraintVertical_bias="0.675" />
+        app:layout_constraintVertical_bias="0.341"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.563">
 
-    <Button
-        android:id="@+id/onepiecebtn"
-        android:text="정장/원피스"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.500"
-        app:layout_constraintVertical_bias="0.675" />
+        <RadioButton
+            android:id="@+id/top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="상의"
+            android:layout_gravity="center"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="하의"
+            android:layout_gravity="center"
+            android:layout_weight="1"/>
+
+        <RadioButton
+            android:id="@+id/dress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="원피스/정장"
+            android:layout_gravity="center"
+            android:layout_weight="1"/>
+    </RadioGroup>
 
 
 

@@ -8,7 +8,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.RadioGroup;
 
 
 /**
@@ -27,12 +28,23 @@ public class GenderTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_gender_type, container, false);
-        Button malebtn = (Button)view.findViewById(R.id.malebtn);
-        Button femalebtn = (Button)view.findViewById(R.id.femalebtn);
-        malebtn.setOnClickListener(new View.OnClickListener() {
+        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                switch (checkedId){
+                    case R.id.fragment1 :
+                        break;
+                    case R.id.fragment2 :
+                        break;
+                }
+
+            }
+        });
+        ImageView go_2 = (ImageView) view.findViewById(R.id.go_2);
+        go_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.tag += "1";
                 TypeTypeFragment fragment = new TypeTypeFragment();
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
@@ -41,11 +53,12 @@ public class GenderTypeFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-        femalebtn.setOnClickListener(new View.OnClickListener() {
+
+        ImageView back_2 = (ImageView) view.findViewById(R.id.back_2);
+        back_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MainActivity.tag += "2";
-                TypeTypeFragment fragment = new TypeTypeFragment();
+                SelectMainFragment fragment = new SelectMainFragment();
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
@@ -53,6 +66,7 @@ public class GenderTypeFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
+
         return view;
     }
 
