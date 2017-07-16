@@ -33,7 +33,6 @@ public class GenderTypeFragment extends Fragment {
 
         ImageView go_2 = (ImageView) view.findViewById(R.id.go_2);
 
-        Log.d("나와","*************************************");
         go_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
