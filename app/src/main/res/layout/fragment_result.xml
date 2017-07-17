@@ -3,15 +3,38 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:gravity="center_horizontal"
-    >
-    <TextView
-        android:text="추천 상품"
-        android:textSize="10pt"
-        android:textColor="#4001ff"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    android:gravity="center_horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view3"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:text="추천 상품"
+            android:textSize="12pt"
+            android:background="#000000"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="48dp" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view4"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+
     <ListView
         android:id="@+id/resultlist"
         android:layout_width="wrap_content"

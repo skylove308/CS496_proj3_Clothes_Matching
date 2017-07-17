@@ -2,6 +2,8 @@ package com.example.clothes_matching;
 
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -98,18 +100,28 @@ public class BodyTypeFragment extends Fragment {
             }
         });
 
-        ImageView finish = (ImageView) view.findViewById(R.id.finish);
-        finish.setOnClickListener(new View.OnClickListener() {
+        final LottieAnimationView animationView = (LottieAnimationView) view.findViewById(R.id.animation_view2);
+
+        animationView.setAnimation("check_pop.json");
+        animationView.playAnimation();
+        animationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MainActivity.tag += String.valueOf(bodies);
+                animationView.playAnimation();
 
-                ResultFragment fragment = new ResultFragment();
-                FragmentManager fm = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                fragmentTransaction.replace(R.id.MainView, fragment);
-                fragmentTransaction.commit();
-                System.out.println(MainActivity.tag);
+                Handler handler = new Handler(){
+                    public void handleMessage(Message msg){
+                        super.handleMessage(msg);
+                        ResultFragment fragment = new ResultFragment();
+                        FragmentManager fm = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                        fragmentTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left);
+                        fragmentTransaction.replace(R.id.MainView, fragment);
+                        fragmentTransaction.commit();
+                    }
+                };
+                handler.sendEmptyMessageDelayed(0, 1000);
             }
         });
 

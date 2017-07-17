@@ -6,7 +6,11 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +19,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.airbnb.lottie.LottieAnimationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -166,6 +172,17 @@ public class ResultFragment extends Fragment {
         Adapter = new ItemsAdapter(getActivity(), R.layout.fragment_result_item, arlist);
         mResult.setAdapter(Adapter);
         MainActivity.tag = "";
+
+        final LottieAnimationView animationView = (LottieAnimationView) view.findViewById(R.id.animation_view3);
+        final LottieAnimationView animationView2 = (LottieAnimationView) view.findViewById(R.id.animation_view4);
+
+        animationView.setAnimation("5_stars.json");
+        animationView2.setAnimation("5_stars.json");
+        animationView.playAnimation();
+        animationView.loop(true);
+        animationView2.playAnimation();
+        animationView.loop(true);
+
         return view;
     }
 
