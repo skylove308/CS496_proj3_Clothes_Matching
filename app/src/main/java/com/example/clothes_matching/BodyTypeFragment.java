@@ -104,7 +104,7 @@ public class BodyTypeFragment extends Fragment {
             public void onClick(View v) {
                 MainActivity.tag += String.valueOf(bodies);
 
-                BodyTypeFragment fragment = new BodyTypeFragment();
+                ResultFragment fragment = new ResultFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.replace(R.id.MainView, fragment);
@@ -119,7 +119,7 @@ public class BodyTypeFragment extends Fragment {
             public void onClick(View v) {
                 MainActivity.tag = MainActivity.tag.substring(0,MainActivity.tag.length()-1);
 
-                ToneTypeFragment fragment = new ToneTypeFragment();
+                FaceTypeFragment fragment = new FaceTypeFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
