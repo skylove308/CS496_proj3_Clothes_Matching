@@ -4,9 +4,12 @@ package com.example.clothes_matching;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -126,9 +129,9 @@ public class SearchListFragment extends Fragment {
             else
             {
                 String mytypelist = what.getString("mytypelist");
-                ArrayList<Listitem> listmoth = new ArrayList<Listitem>();
+                final ArrayList<Listitem> listmoth = new ArrayList<Listitem>();
                 String reallist = mytypelist.substring(1,mytypelist.length()-1);
-                String[] reallists = reallist.split(",");
+                final String[] reallists = reallist.split(",");
                 for(int i=0;i<reallists.length;i++)
                 {
                     reallists[i] = reallists[i].substring(1,reallists[i].length()-1);
@@ -137,6 +140,21 @@ public class SearchListFragment extends Fragment {
                 }
                 sAdapter = new ListmanAdapter(getActivity(), R.layout.fragment_search_list_item, listmoth);
                 searchlistview.setAdapter(sAdapter);
+                searchlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        MainActivity.tag = "" + listmoth.get(position).gender + listmoth.get(position).type + listmoth.get(position).tone + listmoth.get(position).face + listmoth.get(position).body;
+
+                        ResultFragment fragment = new ResultFragment();
+
+                        FragmentManager fm = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                        fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
+                        fragmentTransaction.replace(R.id.MainView, fragment);
+                        fragmentTransaction.commit();
+                    }
+                });
             }
         }
         catch (ExecutionException e)
@@ -151,6 +169,9 @@ public class SearchListFragment extends Fragment {
         {
             e.printStackTrace();
         }
+
+
+
         clearbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
