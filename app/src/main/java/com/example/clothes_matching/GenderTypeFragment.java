@@ -50,12 +50,10 @@ public class GenderTypeFragment extends Fragment {
                 if(genders)
                 {
                     MainActivity.tag += "1";
-                    System.out.println(MainActivity.tag);
                 }
                 else
                 {
                     MainActivity.tag += "2";
-                    System.out.println(MainActivity.tag);
                 }
                 TypeTypeFragment fragment = new TypeTypeFragment();
 

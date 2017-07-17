@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 
@@ -28,28 +29,63 @@ public class FaceTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_face_type, container, false);
-        RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup5);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId){
-                    case R.id.roundfacer :
-                        faces = 1;
-                        break;
-                    case R.id.intrianglefacer :
-                        faces = 2;
-                        break;
-                    case R.id.angularfacer :
-                        faces = 3;
-                        break;
-                    case R.id.trianglefacer :
-                        faces = 4;
-                        break;
-                    case R.id.ellipsefacer :
-                        faces = 5;
-                        break;
-                }
+        final RadioButton m_one = (RadioButton) view.findViewById(R.id.roundfacer);
+        final RadioButton m_two = (RadioButton) view.findViewById(R.id.intrianglefacer);
+        final RadioButton m_three = (RadioButton) view.findViewById(R.id.angularfacer);
+        final RadioButton m_four = (RadioButton) view.findViewById(R.id.trianglefacer);
+        final RadioButton m_five = (RadioButton) view.findViewById(R.id.ellipsefacer);
 
+
+        m_one.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                m_one.setChecked(true);
+                m_two.setChecked(false);
+                m_three.setChecked(false);
+                m_four.setChecked(false);
+                m_five.setChecked(false);
+                faces = 1;
+            }
+        });
+
+        m_two.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                m_one.setChecked(false);
+                m_two.setChecked(true);
+                m_three.setChecked(false);
+                m_four.setChecked(false);
+                m_five.setChecked(false);
+                faces = 2;
+            }
+        });
+
+        m_three.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                m_one.setChecked(false);
+                m_two.setChecked(false);
+                m_three.setChecked(true);
+                m_four.setChecked(false);
+                m_five.setChecked(false);
+                faces = 3;
+            }
+        });
+        m_four.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                m_one.setChecked(false);
+                m_two.setChecked(false);
+                m_three.setChecked(false);
+                m_four.setChecked(true);
+                m_five.setChecked(false);
+                faces = 4;
+            }
+        });
+        m_five.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                m_one.setChecked(false);
+                m_two.setChecked(false);
+                m_three.setChecked(false);
+                m_four.setChecked(false);
+                m_five.setChecked(true);
+                faces = 5;
             }
         });
 

@@ -77,6 +77,7 @@ public class ToneTypeFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.replace(R.id.MainView, fragment);
                 fragmentTransaction.commit();
+                System.out.println(MainActivity.tag);
             }
         });
 
@@ -91,6 +92,7 @@ public class ToneTypeFragment extends Fragment {
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.replace(R.id.MainView, fragment);
                 fragmentTransaction.commit();
+                System.out.println(MainActivity.tag);
             }
         });
 
