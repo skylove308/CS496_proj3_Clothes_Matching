@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="원하시는 옷의 종류를 선택하세요!"
+        android:text="원하시는 옷의 종류를 선택하세요"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#4001ff"
@@ -50,15 +50,15 @@
 
     <RadioGroup
         android:id="@+id/radioGroup3"
-        android:layout_width="300dp"
+        android:layout_width="330dp"
         android:layout_height="85dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.341"
+        app:layout_constraintVertical_bias="0.337"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.563">
+        app:layout_constraintHorizontal_bias="0.802">
 
         <RadioButton
             android:id="@+id/top"
@@ -86,7 +86,40 @@
             android:text="원피스/정장"
             android:layout_gravity="center"
             android:layout_weight="1"/>
+
+
     </RadioGroup>
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/t_shirt_icon"
+        app:layout_constraintHorizontal_bias="0.175"
+        app:layout_constraintVertical_bias="0.521" />
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/short_pants_icon"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintVertical_bias="0.519" />
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/dress_icon"
+        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintVertical_bias="0.519" />
 
 
 

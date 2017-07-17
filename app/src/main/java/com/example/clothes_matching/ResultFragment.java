@@ -4,6 +4,9 @@ package com.example.clothes_matching;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
@@ -197,10 +200,11 @@ public class ResultFragment extends Fragment {
 
         animationView.setAnimation("5_stars.json");
         animationView2.setAnimation("5_stars.json");
+
         animationView.playAnimation();
         animationView.loop(true);
         animationView2.playAnimation();
-        animationView.loop(true);
+        animationView2.loop(true);
 
         return view;
     }
