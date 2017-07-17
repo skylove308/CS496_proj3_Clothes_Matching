@@ -5,11 +5,13 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 
 /**
@@ -29,6 +31,10 @@ public class BodyTypeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_body_type, container, false);
+
+        TextView textView1 = (TextView)view.findViewById(R.id.body_text);
+        textView1.setText(Html.fromHtml(getString(R.string.body)));
+
         RadioGroup radioGroup = (RadioGroup)view.findViewById(R.id.radioGroup6);
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -74,8 +80,8 @@ public class BodyTypeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity.tag = MainActivity.tag.substring(0,MainActivity.tag.length()-1);
-                ToneTypeFragment fragment = new ToneTypeFragment();
 
+                ToneTypeFragment fragment = new ToneTypeFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
                 fragmentTransaction.replace(R.id.MainView, fragment);
