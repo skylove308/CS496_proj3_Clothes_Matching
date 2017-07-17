@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.facebook.AccessToken;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -169,6 +170,24 @@ public class ResultFragment extends Fragment {
                 }
             }
         }
+
+        if(AccessToken.getCurrentAccessToken() != null)
+        {
+            PutTask putTask = new PutTask("http://13.124.144.112:8090/api/person/" + AccessToken.getCurrentAccessToken().getUserId(), "{\"mytype\" : \"" + MainActivity.tag + "\"}");
+            try
+            {
+                putTask.execute("i").get();
+            }
+            catch (ExecutionException e)
+            {
+                e.printStackTrace();
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+        }
+
         Adapter = new ItemsAdapter(getActivity(), R.layout.fragment_result_item, arlist);
         mResult.setAdapter(Adapter);
         MainActivity.tag = "";

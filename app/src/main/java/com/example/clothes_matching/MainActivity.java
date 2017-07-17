@@ -262,6 +262,11 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        } else if (id == R.id.nav_mypage) {
+            if(AccessToken.getCurrentAccessToken() != null)
+            {
+                fragment = new SearchListFragment();
+            }
         } else if (id == R.id.nav_choose) {
             fragment = new SelectMainFragment();
         }
