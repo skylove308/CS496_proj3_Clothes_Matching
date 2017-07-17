@@ -126,30 +126,17 @@
         tools:layout_constraintRight_creator="1"
         tools:layout_constraintLeft_creator="1" />
 
-    <ImageView
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/go_into_icon"
-        android:id="@+id/go_1"
-        android:background="@drawable/button_click"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintVertical_bias="0.941" />
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/animation_view"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
-        app:layout_constraintVertical_bias="1.0"/>
+        app:layout_constraintVertical_bias="0.941"/>
 
 
 

@@ -154,7 +154,7 @@
     <ImageView
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/go_into_icon"
+        android:background="@drawable/button_click"
         android:id="@+id/go_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -166,7 +166,7 @@
     <ImageView
         android:layout_width="64dp"
         android:layout_height="64dp"
-        android:src="@drawable/back_into_icon"
+        android:background="@drawable/button_click2"
         android:id="@+id/back_5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

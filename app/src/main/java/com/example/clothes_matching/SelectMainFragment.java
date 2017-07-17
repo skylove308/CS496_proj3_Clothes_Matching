@@ -1,8 +1,9 @@
 package com.example.clothes_matching;
 
 
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.airbnb.lottie.LottieAnimationView;
@@ -34,18 +34,6 @@ public class SelectMainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_select_main, container, false);
-        ImageView go_1 = (ImageView) view.findViewById(R.id.go_1);
-        go_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                GenderTypeFragment fragment = new GenderTypeFragment();
-
-                FragmentManager fm = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fm.beginTransaction();
-                fragmentTransaction.replace(R.id.MainView, fragment);
-                fragmentTransaction.commit();
-            }
-        });
 
         TextView textView1 = (TextView)view.findViewById(R.id.sm1);
         textView1.setText(Html.fromHtml(getString(R.string.select_main_1)));
@@ -63,22 +51,30 @@ public class SelectMainFragment extends Fragment {
 
         Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.alpha);
         view.startAnimation(animation);
+
         final LottieAnimationView animationView = (LottieAnimationView) view.findViewById(R.id.animation_view);
 
-        animationView.setAnimation("check_mark.json");
+        animationView.setAnimation("simple_check.json");
         animationView.playAnimation();
         animationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 animationView.playAnimation();
 
-
+                Handler handler = new Handler(){
+                    public void handleMessage(Message msg){
+                        super.handleMessage(msg);
+                        GenderTypeFragment fragment = new GenderTypeFragment();
+                        FragmentManager fm = getActivity().getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                        fragmentTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left);
+                        fragmentTransaction.replace(R.id.MainView, fragment);
+                        fragmentTransaction.commit();
+                    }
+                };
+                handler.sendEmptyMessageDelayed(0, 1000);
             }
         });
-
-
-
-
 
         return view;
     }

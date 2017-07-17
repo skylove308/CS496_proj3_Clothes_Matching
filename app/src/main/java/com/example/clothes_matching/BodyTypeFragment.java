@@ -122,6 +122,7 @@ public class BodyTypeFragment extends Fragment {
                 ToneTypeFragment fragment = new ToneTypeFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
                 fragmentTransaction.replace(R.id.MainView, fragment);
                 fragmentTransaction.commit();
                 System.out.println(MainActivity.tag);

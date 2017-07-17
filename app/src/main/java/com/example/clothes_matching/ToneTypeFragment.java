@@ -75,6 +75,7 @@ public class ToneTypeFragment extends Fragment {
                 FaceTypeFragment fragment = new FaceTypeFragment();
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left);
                 fragmentTransaction.replace(R.id.MainView, fragment);
                 fragmentTransaction.commit();
                 System.out.println(MainActivity.tag);
@@ -90,6 +91,7 @@ public class ToneTypeFragment extends Fragment {
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.slide_in_left, R.anim.slide_out_right);
                 fragmentTransaction.replace(R.id.MainView, fragment);
                 fragmentTransaction.commit();
                 System.out.println(MainActivity.tag);
