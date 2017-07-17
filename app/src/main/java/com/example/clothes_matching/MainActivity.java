@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity
     private AccessTokenTracker accessTokenTracker;
     CallbackManager callbackManager;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

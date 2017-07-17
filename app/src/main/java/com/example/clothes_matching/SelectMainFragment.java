@@ -1,14 +1,21 @@
 package com.example.clothes_matching;
 
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.airbnb.lottie.LottieAnimationView;
 
 
 /**
@@ -39,6 +46,38 @@ public class SelectMainFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
+
+        TextView textView1 = (TextView)view.findViewById(R.id.sm1);
+        textView1.setText(Html.fromHtml(getString(R.string.select_main_1)));
+
+        TextView textView2 = (TextView)view.findViewById(R.id.sm2);
+        textView2.setText(Html.fromHtml(getString(R.string.select_main_2)));
+
+        TextView textView3 = (TextView)view.findViewById(R.id.sm6);
+        textView3.setText(Html.fromHtml(getString(R.string.select_main_6)));
+
+        TextView textView4 = (TextView)view.findViewById(R.id.sm8);
+        textView4.setText(Html.fromHtml(getString(R.string.select_main_8)));
+
+
+
+        Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.alpha);
+        view.startAnimation(animation);
+        final LottieAnimationView animationView = (LottieAnimationView) view.findViewById(R.id.animation_view);
+
+        animationView.setAnimation("check_mark.json");
+        animationView.playAnimation();
+        animationView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                animationView.playAnimation();
+
+
+            }
+        });
+
+
+
 
 
         return view;

@@ -6,6 +6,9 @@
     tools:context="com.example.clothes_matching.FaceTypeFragment">
     <TextView
         android:text="당신의 얼굴형을 선택해주세요!"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#4001ff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"

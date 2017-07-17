@@ -14,6 +14,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -96,7 +98,6 @@ public class BodyTypeFragment extends Fragment {
             }
         });
 
-
         ImageView finish = (ImageView) view.findViewById(R.id.finish);
         finish.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -126,6 +127,9 @@ public class BodyTypeFragment extends Fragment {
                 System.out.println(MainActivity.tag);
             }
         });
+
+
+
         return view;
     }
 

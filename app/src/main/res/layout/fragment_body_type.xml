@@ -13,6 +13,9 @@
         <TextView
             android:id="@+id/body_text1"
             android:text="당신의 체형을 선택해주세요!"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#4001ff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toTopOf="@+id/body"
@@ -204,6 +207,7 @@
             app:layout_constraintHorizontal_bias="0.1"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"/>
+
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>
