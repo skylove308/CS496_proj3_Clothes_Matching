@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true"
+        android:text="※클릭: 본인의 퍼스널 컬러를 모르신다면?"
+        android:textColor="#ff5050"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <item android:drawable="@drawable/go_into_icon"
+        android:text="※클릭: 본인의 퍼스널 컬러를 모르신다면?"
+        android:textColor="#5064ff"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+</selector>
