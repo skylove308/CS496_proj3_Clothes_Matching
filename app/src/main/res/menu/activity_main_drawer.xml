@@ -3,10 +3,6 @@
 
     <item android:title="My Page">
             <item
-                android:id="@+id/nav_mypage"
-                android:icon="@drawable/ic_mypage"
-                android:title="마이페이지" />
-            <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/edit"
                 android:title="정보수정" />
@@ -18,6 +14,10 @@
                 android:id="@+id/choose"
                 android:icon="@drawable/choose"
                 android:title="당신의 옷을 추천해드립니다"/>
+            <item
+                android:id="@+id/nav_mypage"
+                android:icon="@drawable/ic_mypage"
+                android:title="추천 기록" />
     </item>
 
 

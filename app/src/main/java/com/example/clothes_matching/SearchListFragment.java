@@ -143,8 +143,20 @@ public class SearchListFragment extends Fragment {
                 searchlistview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
                         MainActivity.tag = "" + listmoth.get(position).gender + listmoth.get(position).type + listmoth.get(position).tone + listmoth.get(position).face + listmoth.get(position).body;
+                        PutTask putTask1 = new PutTask("http://13.124.144.112:8090/api/person/old/" + AccessToken.getCurrentAccessToken().getUserId(), "{\"oldtype\" : " + "\"" + MainActivity.tag + "\"}");
+                        try
+                        {
+                            putTask1.execute("i").get();
+                        }
+                        catch (ExecutionException e)
+                        {
+                            e.printStackTrace();
+                        }
+                        catch (InterruptedException e)
+                        {
+                            e.printStackTrace();
+                        }
 
                         ResultFragment fragment = new ResultFragment();
 
@@ -170,25 +182,30 @@ public class SearchListFragment extends Fragment {
             e.printStackTrace();
         }
 
-
+        final boolean[] clickflag = new boolean[1];
+        clickflag[0] = true;
 
         clearbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try
+                if(clickflag[0] == true)
                 {
-                    putTask.execute("i").get();
-                    ArrayList<Listitem> listmoth = new ArrayList<Listitem>();
-                    ListmanAdapter stAdapter = new ListmanAdapter(getActivity(), R.layout.fragment_search_list_item, listmoth);
-                    searchlistview.setAdapter(stAdapter);
-                }
-                catch (ExecutionException e)
-                {
-                    e.printStackTrace();
-                }
-                catch (InterruptedException e)
-                {
-                    e.printStackTrace();
+                    try
+                    {
+                        clickflag[0] = false;
+                        putTask.execute("i").get();
+                        ArrayList<Listitem> listmoth = new ArrayList<Listitem>();
+                        ListmanAdapter stAdapter = new ListmanAdapter(getActivity(), R.layout.fragment_search_list_item, listmoth);
+                        searchlistview.setAdapter(stAdapter);
+                    }
+                    catch (ExecutionException e)
+                    {
+                        e.printStackTrace();
+                    }
+                    catch (InterruptedException e)
+                    {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
