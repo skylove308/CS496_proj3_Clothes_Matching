@@ -64,6 +64,7 @@ public class SelectMainFragment extends Fragment {
                 Handler handler = new Handler(){
                     public void handleMessage(Message msg){
                         super.handleMessage(msg);
+                        MainActivity.tag = "";
                         GenderTypeFragment fragment = new GenderTypeFragment();
                         FragmentManager fm = getActivity().getSupportFragmentManager();
                         FragmentTransaction fragmentTransaction = fm.beginTransaction();
