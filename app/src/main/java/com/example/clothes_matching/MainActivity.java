@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -119,8 +120,7 @@ public class MainActivity extends AppCompatActivity
         }
         else
         {
-            navtext1.setText("환영합니다");
-            navtext2.setText("android.studio@android.com");
+            navtext1.setText(Html.fromHtml("<u>로그인</u> 해주세요"));
             header.invalidate();
         }
 
@@ -218,8 +218,8 @@ public class MainActivity extends AppCompatActivity
             protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
                 if(currentAccessToken == null)
                 {
-                    navtext1.setText("환영합니다");
-                    navtext2.setText("android.studio@android.com");
+                    navtext1.setText(Html.fromHtml("<u>로그인</u> 해주세요"));
+                    navtext2.setText("");
                     header.invalidate();
                 }
             }

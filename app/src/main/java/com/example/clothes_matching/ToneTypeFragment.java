@@ -39,6 +39,7 @@ public class ToneTypeFragment extends Fragment {
 
                 FragmentManager fm = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransaction = fm.beginTransaction();
+                fragmentTransaction.setCustomAnimations(R.anim.slide_in_right, R.anim.slide_out_left);
                 fragmentTransaction.replace(R.id.MainView, fragment);
                 fragmentTransaction.commit();
             }

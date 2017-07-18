@@ -4,6 +4,7 @@ package com.example.clothes_matching;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -23,6 +24,8 @@ import com.airbnb.lottie.LottieAnimationView;
  */
 public class SelectMainFragment extends Fragment {
 
+    private static final long MIN_CLICK_INTERVAL= 600;
+    private long mLastClickTime;
 
     public SelectMainFragment() {
         // Required empty public constructor
@@ -56,9 +59,19 @@ public class SelectMainFragment extends Fragment {
 
         animationView.setAnimation("simple_check.json");
         animationView.playAnimation();
+
+
         animationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                long currentClickTime = SystemClock.uptimeMillis();
+                long elapsedTime = currentClickTime - mLastClickTime;
+                mLastClickTime = currentClickTime;
+
+                if(elapsedTime<=MIN_CLICK_INTERVAL){
+                    return;
+                }
+
                 animationView.playAnimation();
 
                 Handler handler = new Handler(){
