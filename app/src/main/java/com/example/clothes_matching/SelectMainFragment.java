@@ -50,6 +50,9 @@ public class SelectMainFragment extends Fragment {
         TextView textView4 = (TextView)view.findViewById(R.id.sm8);
         textView4.setText(Html.fromHtml(getString(R.string.select_main_8)));
 
+        TextView textView5 = (TextView)view.findViewById(R.id.sm3);
+        textView5.setText(Html.fromHtml(getString(R.string.select_main_3)));
+
 
 
         Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.alpha);

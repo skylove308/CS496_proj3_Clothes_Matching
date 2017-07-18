@@ -87,7 +87,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="웜톤 여름 VS 겨울 타입 진단하기!"
+            android:text="쿨톤 여름 VS 겨울 타입 진단하기!"
             android:textStyle="bold"
             android:textColor="#3564ff"
             app:layout_constraintTop_toBottomOf="@+id/pc4"

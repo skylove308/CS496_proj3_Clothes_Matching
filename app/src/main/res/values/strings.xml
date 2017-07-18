@@ -11,25 +11,31 @@
 
     <string name="select_main_1">
         <![CDATA[
-        인터넷 쇼핑몰 이용이 <b>처음</b>이신가요?
+        인터넷 쇼핑몰 이용이 <b><span style="color:#80BFFF">처음</b></span style>이신가요?
         ]]>
     </string>
 
     <string name="select_main_2">
         <![CDATA[
-        옷을 <b>입어보지 않고</b> 구매하기 망설여지시나요?
+        옷을 <b><span style="color:#80BFFF">입어보지 않고</b></span style> 구매하기 망설여지시나요?
+        ]]>
+    </string>
+
+    <string name="select_main_3">
+        <![CDATA[
+        저희 <b><span style="color:#0933dc">나래</b></span style> 에서는
         ]]>
     </string>
 
     <string name="select_main_6">
         <![CDATA[
-        고객님에게 맞는 <b>최적의 옷</b>을 찾아드리는
+        고객님에게 맞는 <b><span style="color:#80BFFF">최적의 옷</b></span style>을 찾아드리는
         ]]>
     </string>
 
     <string name="select_main_8">
         <![CDATA[
-        <b>지금 바로 시작하세요!
+        <b>지금 바로 시작하세요!</b>
         ]]>
     </string>
 

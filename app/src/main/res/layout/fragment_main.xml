@@ -57,7 +57,7 @@
 
     <View
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="0.7dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:background="#BDBDBD"
@@ -188,7 +188,7 @@
 
     <View
         android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_height="0.7dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:background="#BDBDBD"
@@ -265,7 +265,8 @@
         android:textColor="#000000"
         app:layout_constraintTop_toBottomOf="@+id/shirt_4"
         app:layout_constraintRight_toLeftOf="@+id/shirt_5_5"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:paddingBottom="30dp"/>
 
     <TextView
         android:layout_width="100dp"
@@ -290,7 +291,8 @@
         android:textColor="#000000"
         app:layout_constraintTop_toBottomOf="@+id/shirt_5"
         app:layout_constraintRight_toLeftOf="@+id/shirt_6_6"
-        app:layout_constraintLeft_toRightOf="@+id/shirt_4_4" />
+        app:layout_constraintLeft_toRightOf="@+id/shirt_4_4"
+        android:paddingBottom="30dp"/>
 
     <TextView
         android:layout_width="100dp"
@@ -302,7 +304,8 @@
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@+id/image6"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/shirt_5" />
+        app:layout_constraintLeft_toRightOf="@+id/shirt_5"
+        />
 
     <TextView
         android:layout_width="100dp"
@@ -315,6 +318,7 @@
         android:textColor="#000000"
         app:layout_constraintTop_toBottomOf="@+id/shirt_6"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/shirt_5_5" />
+        app:layout_constraintLeft_toRightOf="@+id/shirt_5_5"
+        android:paddingBottom="30dp"/>
 </android.support.constraint.ConstraintLayout>
 </ScrollView>
