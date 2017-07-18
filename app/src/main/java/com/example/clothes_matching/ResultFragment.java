@@ -159,11 +159,27 @@ public class ResultFragment extends Fragment {
         }
         else
         {
+            int[] reallist = new int[5];
+            reallist[0] = random.nextInt(hey.length());
+
+            for(int i=1;i<5;i++)
+            {
+                reallist[i] = random.nextInt(hey.length());
+                for(int j=0;j<i;j++)
+                {
+                    if(reallist[j] == reallist[i])
+                    {
+                        reallist[i] = random.nextInt(hey.length());
+                        j=0;
+                    }
+                }
+            }
+
             for(int i=0;i<5;i++)
             {
                 try
                 {
-                    JSONObject content = hey.getJSONObject(random.nextInt(hey.length()));
+                    JSONObject content = hey.getJSONObject(reallist[i]);
                     Items newitem = new Items(content.getString("image"), content.getString("name"), content.getString("price") + "원");
                     arlist.add(newitem);
                 }
