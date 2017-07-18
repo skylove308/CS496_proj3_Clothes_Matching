@@ -15,7 +15,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="36sp"
+        android:textSize="30sp"
         android:textColor="#000000"
         android:id = "@+id/Title_Name"
         android:text="NARAE"
@@ -27,15 +27,14 @@
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/heart"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
         app:lottie_fileName="like.json"
         app:lottie_loop="true"
         app:lottie_autoPlay="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/Title_Name"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.435"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
