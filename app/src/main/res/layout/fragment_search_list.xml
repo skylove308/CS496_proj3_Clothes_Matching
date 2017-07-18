@@ -8,7 +8,7 @@
         android:textSize="8pt"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="성별  |  종류  |  피부 톤  |  얼굴형  |  체형"
+        android:text="성별     종류     피부 톤     얼굴형     체형"
         android:layout_margin="5dp"
         android:background="@color/colorBack"
         android:textStyle="bold"
