@@ -267,7 +267,7 @@ public class MainActivity extends AppCompatActivity
             {
                 fragment = new SearchListFragment();
             }
-        } else if (id == R.id.nav_choose) {
+        } else if (id == R.id.choose) {
             fragment = new SelectMainFragment();
         }
         if(fragment != null){

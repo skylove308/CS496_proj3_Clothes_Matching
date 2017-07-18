@@ -1,6 +1,7 @@
 package com.example.clothes_matching;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -25,20 +26,15 @@ public class IntroActivity extends AppCompatActivity{
         }
     };
 
-    Runnable runnable2 = new Runnable(){
-        @Override
-        public void run(){
-            Intent intent = new Intent(IntroActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.intro_activity);
         TextView textView = (TextView)findViewById(R.id.text_intro);
+        textView.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/a하얀구름.ttf"));
+        textView.setText("NARAE");
+
         Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.alpha);
         textView.startAnimation(animation);
         init();

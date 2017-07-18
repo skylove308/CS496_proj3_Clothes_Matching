@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.clothes_matching.MainFragment">
-
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,12 +19,25 @@
         android:textColor="#000000"
         android:id = "@+id/Title_Name"
         android:text="NARAE"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        android:layout_marginTop="16dp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/heart"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        app:lottie_fileName="like.json"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
-        app:layout_constraintVertical_bias="0.034" />
+        app:layout_constraintHorizontal_bias="0.435"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -48,7 +65,7 @@
         android:background="#BDBDBD"
         android:layout_marginTop="7dp"
         android:id="@+id/bar"
-        app:layout_constraintTop_toBottomOf="@id/Title_Name"
+        app:layout_constraintTop_toBottomOf="@+id/Title_Name"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="8dp"
@@ -111,6 +128,19 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:id="@+id/shirt_1_1"
+        android:layout_marginTop="6dp"
+        android:text="23900원"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/shirt_1"
+        app:layout_constraintRight_toLeftOf="@+id/shirt_2_2"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:id="@+id/shirt_2"
         android:layout_marginTop="6dp"
         android:text="세레나데 배색\n 니트 슬리브리스"
@@ -119,6 +149,19 @@
         app:layout_constraintTop_toBottomOf="@+id/image2"
         app:layout_constraintRight_toLeftOf="@+id/shirt_3"
         app:layout_constraintLeft_toRightOf="@+id/shirt_1" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/shirt_2_2"
+        android:layout_marginTop="6dp"
+        android:text="29900원"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/shirt_2"
+        app:layout_constraintRight_toLeftOf="@+id/shirt_3_3"
+        app:layout_constraintLeft_toRightOf="@+id/shirt_1_1" />
 
     <TextView
         android:layout_width="100dp"
@@ -132,6 +175,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/shirt_2" />
 
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/shirt_3_3"
+        android:layout_marginTop="6dp"
+        android:text="15900원"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/shirt_3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/shirt_2_2" />
+
     <View
         android:layout_width="0dp"
         android:layout_height="1dp"
@@ -140,7 +196,7 @@
         android:background="#BDBDBD"
         android:layout_marginTop="12dp"
         android:id="@+id/bar2"
-        app:layout_constraintTop_toBottomOf="@id/shirt_3"
+        app:layout_constraintTop_toBottomOf="@id/shirt_2_2"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginStart="8dp"
@@ -203,6 +259,19 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:id="@+id/shirt_4_4"
+        android:layout_marginTop="6dp"
+        android:text="31000원"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/shirt_4"
+        app:layout_constraintRight_toLeftOf="@+id/shirt_5_5"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:id="@+id/shirt_5"
         android:layout_marginTop="6dp"
         android:text="스윗치즈 린넨\n 롱 원피스"
@@ -215,6 +284,19 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="wrap_content"
+        android:id="@+id/shirt_5_5"
+        android:layout_marginTop="6dp"
+        android:text="37000원"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/shirt_5"
+        app:layout_constraintRight_toLeftOf="@+id/shirt_6_6"
+        app:layout_constraintLeft_toRightOf="@+id/shirt_4_4" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
         android:id="@+id/shirt_6"
         android:layout_marginTop="6dp"
         android:text="해변으로 민소매\n 미니 원피스"
@@ -223,4 +305,18 @@
         app:layout_constraintTop_toBottomOf="@+id/image6"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toRightOf="@+id/shirt_5" />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/shirt_6_6"
+        android:layout_marginTop="6dp"
+        android:text="29900원"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@+id/shirt_6"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/shirt_5_5" />
 </android.support.constraint.ConstraintLayout>
+</ScrollView>
