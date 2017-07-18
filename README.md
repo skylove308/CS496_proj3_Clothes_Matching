@@ -1,6 +1,6 @@
 # CS496_proj3_Clothes_Matching
 
-### TEAM MEMBER
+### TEAM MEMBER 이경택, 김영호
 
 #### Clothes Matching
 
