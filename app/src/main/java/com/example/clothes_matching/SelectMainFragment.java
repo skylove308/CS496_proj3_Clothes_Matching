@@ -55,7 +55,7 @@ public class SelectMainFragment extends Fragment {
 
 
 
-        Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.alpha);
+        final Animation animation = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.alpha);
         view.startAnimation(animation);
 
         final LottieAnimationView animationView = (LottieAnimationView) view.findViewById(R.id.animation_view);
@@ -67,7 +67,7 @@ public class SelectMainFragment extends Fragment {
         animationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                long currentClickTime = SystemClock.uptimeMillis();
+                long currentClickTime = SystemClock.uptimeMillis();      // 중복 클릭 방지
                 long elapsedTime = currentClickTime - mLastClickTime;
                 mLastClickTime = currentClickTime;
 
@@ -77,8 +77,8 @@ public class SelectMainFragment extends Fragment {
 
                 animationView.playAnimation();
 
-                Handler handler = new Handler(){
-                    public void handleMessage(Message msg){
+                Handler handler = new Handler() {                       //click 후 delay를 줘서 animation이 play될때까지 시간을 범
+                    public void handleMessage(Message msg) {
                         super.handleMessage(msg);
                         MainActivity.tag = "";
                         GenderTypeFragment fragment = new GenderTypeFragment();
@@ -89,7 +89,7 @@ public class SelectMainFragment extends Fragment {
                         fragmentTransaction.commit();
                     }
                 };
-                handler.sendEmptyMessageDelayed(0, 1000);
+                handler.sendEmptyMessageDelayed(0, 1200);
             }
         });
 
