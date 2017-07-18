@@ -7,14 +7,17 @@
         android:id="@+id/itemimage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="20dp"/>
     <LinearLayout
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/itemimage">
+        android:layout_below="@id/itemimage"
+        android:layout_marginBottom="20dp">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
