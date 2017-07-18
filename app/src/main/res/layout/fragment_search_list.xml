@@ -4,21 +4,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
+    <TextView
+        android:textSize="8pt"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="성별  |  종류  |  피부 톤  |  얼굴형  |  체형"
+        android:layout_margin="5dp"
+        android:background="@color/colorBack"
+        android:textStyle="bold"
+        android:textColor="@color/colorText"
+        android:gravity="center"
+        android:layout_weight="1"/>
+    <ListView
+        android:id="@+id/searchlist"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+    </ListView>
     <Button
         android:id="@+id/clearlist"
         android:text="추천 기록 삭제"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <TextView
-        android:textSize="8pt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="성 / 종류 / 피부 톤 / 얼굴형 / 체형"
-        android:layout_margin="5dp"
-        android:gravity="center_horizontal"/>
-    <ListView
-        android:id="@+id/searchlist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </ListView>
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
 </LinearLayout>
