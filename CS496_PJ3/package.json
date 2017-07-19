@@ -1,0 +1,7 @@
+{
+  "name": "CS496_PJ3",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongoose": "^4.11.1"
+  }
+}
